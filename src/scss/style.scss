@@ -2,12 +2,14 @@
 @import "abstract/variables";
 @import "abstract/mixins";
 @import "abstract/placeholders";
+@import "abstract/animation";
 
 // Vendors
 // @import "vendors/slick/slick", "vendors/slick/slick-theme";
 
 // Base
 @import "base/reset";
+@import "base/base";
 @import "base/global";
 @import "base/fonts";
 @import "base/button";

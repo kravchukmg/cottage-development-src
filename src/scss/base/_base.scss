@@ -1,22 +1,45 @@
 *, *::before, *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-	font-size: $base-font-size;
+  font-size: $base-font-size;
+  overflow-x: hidden;
 }
 
 body {
-	font-family: Verdana, sans-serif;
-	font-size: 1.6rem;
+  @include font(16px, 24px, 'Roboto-Regular');
+  background-color: $color-background;
+  color: $color-text;
+  overflow: hidden;
 }
 
 img, svg {
-	display: block;
-	max-width: 100%;
-	margin: 0 auto;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-i {
-	display: inline-block;
+i,
+button {
+  display: inline-block;
+}
+
+picture {
+  display: block;
+}
+
+h1 {
+  @include font(55px, 66px, 'Roboto-Light');
+  @include adaptive-font(55, 66, 20, 24, 'Roboto-Light');
+}
+
+h2 {
+  @include font(40px, 60px, 'Roboto-Regular');
+  @include adaptive-font(40, 60, 18, 22, 'Roboto-Regular');
+}
+
+p {
+  @include font(16px, 26px, 'Roboto-Thin');
+  @include adaptive-font(16, 26, 14, 18, 'Roboto-Thin');
 }

@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('_head.html')
-  
+
 <body>
-	@@include('_header.html')
+  @@include('_header.html')
 
-	<main class="main" id="main">
-		Main
-	</main>
-	
-	@@include('_footer.html')
+  <main class="main" id="main">
+    <div class="banner">
+      <div class="banner__text">
+        <h1 class="banner__title">
+          Дома в Межигорье
+        </h1>
+        <div class="banner__description">
+          <p class="banner__paragraph">
+            Коттеджный городок возле парка Межигорье.
+          </p>
+          <button class="banner__btn btn">
+            Записаться на просмотр
+          </button>
+        </div>
+      </div>
+      <picture class="banner__image">
+        <img src="./img/banner/1.png" alt="image">
+      </picture>
+      <picture class="banner__cloud">
+        <img src="./img/cloud.png" alt="cloud">
+      </picture>
+    </div>
+  </main>
 
-	@@include('_scripts.html')
+  @@include('_footer.html')
+
+  @@include('_scripts.html')
 </body>
+
 </html>

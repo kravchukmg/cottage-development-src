@@ -1,0 +1,15 @@
+.btn {
+  @include font(18px, 26px, "Roboto-Thin");
+  @include adaptive-font(18, 26, 16, 18, 'Roboto-Thin');
+  min-width: 220px;
+  padding: 11px;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  color: $color-text;
+  transition: all 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
