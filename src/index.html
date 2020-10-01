@@ -1,37 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('_head.html')
+  @@include('_head.html')
 
-<body>
-  @@include('_header.html')
+  <body>
+    @@include('_header.html')
 
-  <main class="main" id="main">
-    <div class="banner">
-      <div class="banner__text">
-        <h1 class="banner__title">
-          Дома в Межигорье
-        </h1>
-        <div class="banner__description">
-          <p class="banner__paragraph">
-            Коттеджный городок возле парка Межигорье.
-          </p>
-          <button class="banner__btn btn">
-            Записаться на просмотр
-          </button>
+    <main class="main" id="main">
+      <!-- Banner -->
+      <div class="banner">
+        <div class="banner__text">
+          <h1 class="banner__title">Дома в Межигорье</h1>
+          <div class="banner__description">
+            <p class="banner__paragraph">
+              Коттеджный городок возле парка Межигорье.
+            </p>
+            <button class="banner__btn btn">Записаться на просмотр</button>
+          </div>
         </div>
+        <picture class="banner__image">
+          <img class="lazyload" data-src="./img/banner/1.png" alt="image" />
+        </picture>
+        <picture class="cloud banner__cloud">
+          <img class="lazyload" data-src="./img/cloud.png" alt="cloud" />
+        </picture>
       </div>
-      <picture class="banner__image">
-        <img src="./img/banner/1.png" alt="image">
-      </picture>
-      <picture class="banner__cloud">
-        <img src="./img/cloud.png" alt="cloud">
-      </picture>
-    </div>
-  </main>
+      <!-- Section 1 -->
+      <section class="section-1">
+        <div class="container section-1__inner">
+          <h2 class="section__title">Минуя все пробки</h2>
+          <div>
+            <p>
+              Доехать до района Оболонь можно всего за 10 минут. Скоростная
+              прямая дорога позволит вам быстро добраться в город и обратно
+              домой.
+            </p>
+            <p>Более того, весь путь будет живописным и в окружении природы.</p>
+          </div>
+          <ul class="list">
+            <li class="item">
+              <p><span>10</span> минут</p>
+              <p>до метро Оболонь</p>
+              <p>.............. 11 км</p>
+            </li>
+            <li class="item">
+              <p><span>3</span> минуты</p>
+              <p>до парка Межигорье</p>
+              <p>.............. 300 м</p>
+            </li>
+            <li class="item">
+              <p><span>10</span> минут</p>
+              <p>до метро Оболонь</p>
+              <p>.............. 11 км</p>
+            </li>
+            <li class="item">
+              <p><span>7</span> минут</p>
+              <p>до метро Оболонь</p>
+              <p>.............. 1,6 км</p>
+            </li>
+          </ul>
+        </div>
+        <picture class="section-1__image-1">
+          <img class="lazyload" data-src="./img/section-1/1.png" alt="image" />
+        </picture>
+        <picture class="cloud section-1__cloud">
+          <img class="lazyload" data-src="./img/cloud.png" alt="cloud" />
+        </picture>
+      </section>
+      <!-- Section 2 -->
+      <section class="section-2">
+        <div class="container section-2__inner">
+          <h2 class="section__title">Созданы впечатлять</h2>
+          <div>
+            <p>
+              Коллекция из трех эксклюзивных коттеджей в современном
+              архитектурном стиле со вторым светом. Уже построены и Вы можете
+              выбрать тот, который подходит Вам больше всего.
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="list">
+            <picture class="section-2__image-1">
+              <img
+                class="lazyload"
+                data-src="./img/section-2/1.png"
+                alt="image"
+              />
+            </picture>
+            <picture class="section-2__image-2">
+              <img
+                class="lazyload"
+                data-src="./img/section-2/2.png"
+                alt="cloud"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  @@include('_footer.html')
-
-  @@include('_scripts.html')
-</body>
-
+    @@include('_footer.html') @@include('_scripts.html')
+  </body>
 </html>

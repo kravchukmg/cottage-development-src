@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -8,13 +10,15 @@ html {
 }
 
 body {
-  @include font(16px, 24px, 'Roboto-Regular');
+  @include font(16px, 24px, "Roboto-Regular");
+  counter-reset: title;
   background-color: $color-background;
   color: $color-text;
   overflow: hidden;
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -30,16 +34,29 @@ picture {
 }
 
 h1 {
-  @include font(55px, 66px, 'Roboto-Light');
-  @include adaptive-font(55, 66, 20, 24, 'Roboto-Light');
+  @include font(55px, 66px, "Roboto-Light");
 }
 
 h2 {
-  @include font(40px, 60px, 'Roboto-Regular');
-  @include adaptive-font(40, 60, 18, 22, 'Roboto-Regular');
+  @include font(40px, 60px, "Roboto-Regular");
 }
 
 p {
-  @include font(16px, 26px, 'Roboto-Thin');
-  @include adaptive-font(16, 26, 14, 18, 'Roboto-Thin');
+  @include font(16px, 26px, "Roboto-Thin");
+  margin-bottom: 20px;
+}
+
+section {
+  h2 {
+    position: relative;
+    counter-increment: title;
+    &::before {
+      @include font(20px, 30px, "Roboto-Regular");
+      content: "0" counter(title);
+      position: absolute;
+      bottom: 8px;
+      left: -50px;
+      opacity: 0.15;
+    }
+  }
 }

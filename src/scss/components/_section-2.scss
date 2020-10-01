@@ -1,0 +1,32 @@
+.section-2 {
+  position: relative;
+  min-height: 100vh;
+  padding: 10% 0 5%;
+  &__inner {
+    padding-left: 15%;
+    & > div {
+      &:first-of-type {
+        max-width: 400px;
+      }
+    }
+  }
+  .list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__image-1,
+  &__image-2 {
+    position: relative;
+    height: 0;
+    width: 40%;
+    padding-bottom: 35%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
