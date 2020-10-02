@@ -1,7 +1,7 @@
 .section-2 {
   position: relative;
   min-height: 100vh;
-  padding: 10% 0 5%;
+  padding: 5% 0;
   &__inner {
     padding-left: 15%;
     & > div {
@@ -10,16 +10,65 @@
       }
     }
   }
-  .list {
+  &__impress {
     display: flex;
     justify-content: space-between;
+    margin-top: -50px;
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
   }
-  &__image-1,
+  &__impress-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+    @include respond-to(desktop_minus) {
+      width: 50%;
+    }
+    @include respond-to(mobile) {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    h4 {
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    a {
+      @include font(18px, 28px, "Roboto-Regular");
+      display: inline-block;
+      min-width: 200px;
+      padding: 5px;
+      margin-top: 30px;
+      border-radius: 25px;
+      text-align: center;
+    }
+  }
+  &__image-1 {
+    position: relative;
+    height: 0;
+    width: 70%;
+    padding-bottom: 70%;
+    margin: 0 auto;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
   &__image-2 {
     position: relative;
     height: 0;
-    width: 40%;
-    padding-bottom: 35%;
+    width: 100%;
+    padding-bottom: 100%;
+    margin: 0 auto;
     img {
       position: absolute;
       top: 0;
