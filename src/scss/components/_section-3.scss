@@ -2,14 +2,6 @@
   position: relative;
   min-height: 100vh;
   padding: 5% 0;
-  &__inner {
-    padding-left: 15%;
-    & > div {
-      &:first-of-type {
-        max-width: 470px;
-      }
-    }
-  }
   .pane-item {
     > div {
       width: 50%;

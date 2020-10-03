@@ -2,13 +2,9 @@
   position: relative;
   min-height: 100vh;
   padding: 10% 0 5%;
-  &__inner {
-    padding-left: 15%;
-    & > div {
-      &:first-of-type {
-        max-width: 400px;
-        margin-bottom: 120px;
-      }
+  .section__description {
+    > div {
+      margin-bottom: 120px;
     }
   }
   .list {

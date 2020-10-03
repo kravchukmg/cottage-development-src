@@ -69,3 +69,13 @@ section {
     }
   }
 }
+.section {
+  &__description {
+    padding-left: 15%;
+    & > div {
+      &:first-of-type {
+        max-width: 450px;
+      }
+    }
+  }
+}
