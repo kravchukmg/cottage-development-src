@@ -1,0 +1,35 @@
+.tab-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.tab-item {
+  @include font(12px, 16px, "Roboto-Regular");
+  min-width: 150px;
+  padding: 0 10px 18px;
+  border-bottom: 1px solid $color-gray;
+  text-align: center;
+  transition: all 0.3s;
+  user-select: none;
+  cursor: pointer;
+  &.is-active {
+    border-bottom-color: $color-white;
+    cursor: default;
+  }
+}
+.pane-item {
+  display: flex;
+  justify-content: space-between;
+  height: 0;
+  width: 100%;
+  transition: opacity 0.5s;
+  overflow: hidden;
+  opacity: 0;
+  z-index: -1;
+  &.show {
+    height: auto;
+    opacity: 1;
+    z-index: 0;
+  }
+}
