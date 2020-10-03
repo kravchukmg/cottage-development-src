@@ -58,6 +58,7 @@ section {
   h2 {
     position: relative;
     counter-increment: title;
+    margin-bottom: 40px;
     &::before {
       @include font(20px, 30px, "Roboto-Regular");
       content: "0" counter(title);
