@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   lazyload();
+  AOS.init({
+    duration: 700,
+    anchorPlacement: "center-bottom",
+  });
 
   let tabListArr = document.querySelectorAll(".tab-list");
 

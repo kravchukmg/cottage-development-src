@@ -54,6 +54,12 @@ p {
   margin-bottom: 20px;
 }
 
+.container {
+  width: 100%;
+  max-width: $site_width + px;
+  margin: 0 auto;
+}
+
 section {
   h2 {
     position: relative;
@@ -69,13 +75,10 @@ section {
     }
   }
 }
+
 .section {
   &__description {
-    padding-left: 15%;
-    & > div {
-      &:first-of-type {
-        max-width: 450px;
-      }
-    }
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
