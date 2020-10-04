@@ -49,6 +49,10 @@ h4 {
   @include font(30px, 46px, "Roboto-Thin");
 }
 
+h5 {
+  @include font(26px, 30px, "Roboto-Regular");
+}
+
 p {
   @include font(16px, 26px, "Roboto-Thin");
   margin-bottom: 20px;
@@ -58,27 +62,41 @@ p {
   width: 100%;
   max-width: $site_width + px;
   margin: 0 auto;
-}
-
-section {
-  h2 {
-    position: relative;
-    counter-increment: title;
-    margin-bottom: 40px;
-    &::before {
-      @include font(20px, 30px, "Roboto-Regular");
-      content: "0" counter(title);
-      position: absolute;
-      bottom: 8px;
-      left: -50px;
-      opacity: 0.15;
-    }
+  @include respond-to(desktop_minus) {
+    max-width: 990px;
+    padding: 0 15px;
   }
 }
 
 .section {
   &__description {
-    max-width: 500px;
+    max-width: 555px;
+    padding-left: 55px;
     margin: 0 auto;
+    @include respond-to(mobile) {
+      padding-left: 0;
+    }
+  }
+  h2 {
+    position: relative;
+    counter-increment: title;
+    margin-bottom: 40px;
+    @include respond-to(mobile) {
+      padding-top: 40px;
+    }
+    &::before {
+      @include font(20px, 30px, "Roboto-Regular");
+      content: "0" counter(title);
+      position: absolute;
+      top: 50%;
+      left: -50px;
+      transform: translateY(-50%);
+      opacity: 0.15;
+      @include respond-to(mobile) {
+        top: 0;
+        left: 0;
+        transform: translateY(0);
+      }
+    }
   }
 }

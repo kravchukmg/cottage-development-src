@@ -4,7 +4,7 @@
   justify-content: space-between;
   min-height: calc(100vh - 107px);
   padding: 5.25% 0;
-  @include respond-to(mobile) {
+  @include respond-to(desktop_minus) {
     flex-direction: column;
     padding: 30px 0;
   }
@@ -40,19 +40,22 @@
     border-radius: 30px;
     margin-top: 20px;
   }
-  &__image {
+  &__picture-house {
     position: absolute;
     right: -11%;
     bottom: -10%;
     height: 0;
     width: 79.27%;
     padding-bottom: 43.28%;
-    @include respond-to(mobile) {
+    z-index: -1;
+    @include respond-to(desktop_minus) {
       position: relative;
+      right: 0;
+      bottom: 0;
       align-self: flex-end;
       width: 100%;
-      padding-bottom: 50%;
-      margin-top: 40px;
+      padding-bottom: 55%;
+      margin-top: -7%;
     }
     img {
       position: absolute;
@@ -64,7 +67,7 @@
       object-position: top left;
     }
   }
-  &__cloud {
+  &__picture-cloud {
     position: absolute;
     top: 0;
     left: 0;
@@ -72,6 +75,9 @@
     width: 21.35%;
     padding-bottom: 9.89%;
     animation: move-to-right 60s linear infinite;
+    @include respond-to(desktop_minus) {
+      position: relative;
+    }
     img {
       position: absolute;
       top: 0;

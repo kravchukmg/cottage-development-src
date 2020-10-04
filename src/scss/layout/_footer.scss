@@ -1,0 +1,55 @@
+.footer {
+  h5 {
+    @include font(65px, 74px, "Roboto-Bold");
+    position: relative;
+    @include respond-to(mobile) {
+      @include font(40px, 50px, "Roboto-Bold");
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 20px);
+      transform: translateY(-50%);
+      width: 1000px;
+      border-bottom: 1px solid currentColor;
+      background-color: currentColor;
+    }
+  }
+  &__description {
+    display: flex;
+    padding: 4.16% 0;
+    @include respond-to(mobile) {
+      flex-direction: column;
+    }
+    p {
+      max-width: 300px;
+      margin-right: 11.66%;
+      margin-bottom: 0;
+      font-family: "Roboto-Regular";
+      @include respond-to(mobile) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        display: block;
+        margin-bottom: 10px;
+        color: currentColor;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__description-phone {
+    font-size: 12px;
+    line-height: 22px;
+  }
+  &__description-address {
+    font-size: 12px;
+    line-height: 22px;
+  }
+}

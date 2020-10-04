@@ -3,6 +3,11 @@
   justify-content: center;
   align-items: center;
   padding: 40px 0;
+  overflow-x: auto;
+  @include respond-to(mobile) {
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
 }
 .tab-item {
   @include font(12px, 16px, "Roboto-Regular");
@@ -11,8 +16,15 @@
   border-bottom: 1px solid $color-gray;
   text-align: center;
   transition: all 0.3s;
+  white-space: nowrap;
   user-select: none;
   cursor: pointer;
+  @include respond-to(mobile) {
+    padding: 0 15px 15px;
+  }
+  @include respond-to(mobile_portrait) {
+    min-width: auto;
+  }
   &.is-active {
     border-bottom-color: $color-white;
     cursor: default;
@@ -27,9 +39,30 @@
   overflow: hidden;
   opacity: 0;
   z-index: -1;
+  @include respond-to(mobile) {
+    flex-direction: column;
+  }
   &.show {
     height: auto;
     opacity: 1;
     z-index: 0;
+  }
+  > div {
+    width: 50%;
+    @include respond-to(mobile) {
+      width: 100%;
+      margin-top: -20px;
+    }
+  }
+  &__content {
+    h3 {
+      margin-bottom: 30px;
+      @include respond-to(mobile) {
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      margin-bottom: 30px;
+    }
   }
 }
