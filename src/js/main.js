@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Lazyload init
   lazyload();
+  // AOS init
   AOS.init({
     duration: 700,
     anchorPlacement: "center-bottom",
   });
+  // Inputmask init
+  Inputmask().mask(document.querySelectorAll(".input[name='phone']"));
 
   let tabListArr = document.querySelectorAll(".tab-list");
 

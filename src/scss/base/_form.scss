@@ -1,0 +1,28 @@
+.form {
+  width: 100%;
+  max-width: 470px;
+  @include respond-to(desktop_minus) {
+    max-width: 390px;
+  }
+  .input-group {
+    margin-bottom: 20px;
+  }
+  .input-title {
+    @include font(12px, 16px, "Roboto-Regular");
+    padding-bottom: 5px;
+    margin-bottom: 0;
+  }
+  .input {
+    @include font(15px, 20px, "Roboto-Regular");
+    width: 100%;
+    padding: 10px 0;
+    border: 0;
+    color: $color-white;
+    border-bottom: 1px solid currentColor;
+    background-color: transparent;
+  }
+  &__submit {
+    @include font(14px, 20px, "Roboto-Regular");
+    margin-top: 40px;
+  }
+}

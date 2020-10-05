@@ -1,0 +1,46 @@
+.section-6 {
+  position: relative;
+  padding: 5% 0;
+  h2 {
+    @include respond-to(desktop_minus) {
+      padding-left: 50px;
+    }
+    @include respond-to(mobile) {
+      padding-left: 0;
+    }
+    &::before {
+      left: 0;
+    }
+  }
+  picture {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 0;
+    width: 630px;
+    padding-bottom: 630px;
+    z-index: -1;
+    @include respond-to(desktop_minus) {
+      width: 470px;
+      padding-bottom: 470px;
+    }
+    @include respond-to(mobile) {
+      position: relative;
+      transform: translateY(0);
+      margin: -20px 0 0 auto;
+    }
+    @include respond-to(mobile_portrait) {
+      width: 100%;
+      padding-bottom: 100%;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

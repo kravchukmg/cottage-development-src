@@ -55,7 +55,6 @@ h5 {
 
 p {
   @include font(16px, 26px, "Roboto-Thin");
-  margin-bottom: 20px;
 }
 
 .container {
@@ -98,5 +97,8 @@ p {
         transform: translateY(0);
       }
     }
+  }
+  p {
+    margin-bottom: 20px;
   }
 }
