@@ -1,6 +1,5 @@
 .btn {
-  @include font(18px, 26px, "Roboto-Thin");
-  @include adaptive-font(18, 26, 16, 18, 'Roboto-Thin');
+  @include font(16px, 26px, "Roboto-Thin");
   min-width: 220px;
   padding: 11px;
   border: 1px solid currentColor;

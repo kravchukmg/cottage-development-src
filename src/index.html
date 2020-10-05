@@ -14,7 +14,9 @@
             <p class="banner__paragraph">
               Коттеджный городок возле парка Межигорье.
             </p>
-            <button class="banner__btn btn">Записаться на просмотр</button>
+            <button class="banner__btn btn js-callback-btn-open">
+              Записаться на просмотр
+            </button>
           </div>
         </div>
         <picture class="cloud banner__picture-cloud">
@@ -256,7 +258,11 @@
         <div class="section-4__inner">
           <h2 class="section__title"></h2>
           <picture>
-            <img class="lazyload" data-src="img/section-4/1.jpg" alt="image" />
+            <img
+              class="lazyload parallax"
+              data-src="img/section-4/1.jpg"
+              alt="image"
+            />
           </picture>
         </div>
       </section>
@@ -390,7 +396,8 @@
           <h2 class="section__title" data-aos="fade-left">
             Записаться на просмотр
           </h2>
-          <form class="form" action="form.php" method="post">
+          <!-- Form -->
+          <form class="form" action="form.php" method="post" autocomplete="off">
             <div class="input-group input-group-name">
               <p class="input-title">Имя</p>
               <input class="input" type="text" name="name" />
@@ -413,11 +420,12 @@
           </form>
         </div>
         <picture>
-          <img data-src="img/section-6/1.png" alt="image" class="lazyload" />
+          <img class="lazyload" data-src="img/section-6/1.png" alt="image" />
         </picture>
       </section>
     </main>
 
-    @@include('_footer.html') @@include('_scripts.html')
+    @@include('_footer.html') @@include('_callback-popup.html')
+    @@include('_scripts.html')
   </body>
 </html>

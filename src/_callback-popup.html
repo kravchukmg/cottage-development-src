@@ -1,0 +1,26 @@
+<div class="callback-popup js-callback-btn-close">
+  <div class="callback-popup__inner">
+    <div class="js-callback-btn-close"></div>
+    <h4 class="callback-popup__title">Записаться на просмотр</h4>
+    <!-- Form -->
+    <form class="form" action="form.php" method="post" autocomplete="off">
+      <div class="input-group input-group-name">
+        <p class="input-title">Имя</p>
+        <input class="input" type="text" name="name" />
+      </div>
+      <div class="input-group input-group-phone">
+        <p class="input-title">Телефон</p>
+        <input
+          class="input"
+          type="tel"
+          name="phone"
+          data-inputmask-mask="+380 99 999-99-99"
+          placeholder="+380 99 999-99-99"
+          maxlength="17"
+          required
+        />
+      </div>
+      <button class="form__submit submit btn" type="submit">Записаться</button>
+    </form>
+  </div>
+</div>
