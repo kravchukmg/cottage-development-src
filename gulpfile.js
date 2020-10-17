@@ -7,9 +7,10 @@ const { src, dest } = require("gulp"),
   autoprefixer = require("gulp-autoprefixer"),
   media_queries = require("gulp-group-css-media-queries"),
   clean_css = require("gulp-clean-css"),
-  browserify = require("browserify"),
-  source = require("vinyl-source-stream"),
-  streamify = require("gulp-streamify"),
+  // browserify = require("browserify"),
+  // source = require("vinyl-source-stream"),
+  // streamify = require("gulp-streamify"),
+  concat = require('gulp-concat'),
   uglify = require("gulp-uglify-es").default,
   rename = require("gulp-rename"),
   imagemin = require("gulp-imagemin"),
@@ -88,12 +89,13 @@ function css() {
 
 function js() {
   return (
-    src(path.src.js)
-      // .pipe(source('main.js'))
+    src(['./src/js/inputmask.min.js', path.src.js])
       .pipe(sourcemaps.init())
+      .pipe(concat('main.js'))
       .pipe(sourcemaps.write())
       .pipe(dest(path.build.js))
-      .pipe(streamify(uglify()))
+      .pipe(uglify())
+      .pipe(sourcemaps.write())
       .pipe(rename({ extname: ".min.js" }))
       .pipe(dest(path.build.js))
       .pipe(browsersync.stream())

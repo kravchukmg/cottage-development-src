@@ -20,6 +20,14 @@
     color: $color-white;
     border-bottom: 1px solid currentColor;
     background-color: transparent;
+    &::placeholder {
+      transition: all 0.2s;
+    }
+    &:focus {
+      &::placeholder {
+        color: transparent;
+      }
+    }
   }
   &__submit {
     @include font(14px, 20px, "Roboto-Regular");
