@@ -30,7 +30,7 @@
     p {
       margin-bottom: 0;
     }
-    a {
+    .btn {
       @include font(18px, 28px, "Roboto-Regular");
       display: inline-block;
       min-width: 200px;
