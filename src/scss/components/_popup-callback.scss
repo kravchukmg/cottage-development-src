@@ -12,30 +12,6 @@
   z-index: 9;
   opacity: 0;
   visibility: hidden;
-  .js-callback-btn-close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: $color-white;
-    }
-    &::before {
-      transform: rotate(45deg);
-    }
-    &::after {
-      transform: rotate(-45deg);
-    }
-  }
   &.is-active {
     opacity: 1;
     visibility: visible;
@@ -64,8 +40,36 @@
       }
     }
   }
-  &__title {
-    margin-bottom: 20px;
-    text-align: center;
+}
+.callback-popup__btn-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
   }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-white;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+.callback-popup__title {
+  margin-bottom: 20px;
+  text-align: center;
 }
