@@ -1,12 +1,12 @@
 const { src, dest } = require("gulp"),
   gulp = require("gulp"),
   browsersync = require("browser-sync").create(),
-  file_include = require("gulp-file-include"),
+  fileinclude = require("gulp-file-include"),
   del = require("del"),
   sourcemaps = require("gulp-sourcemaps"),
   autoprefixer = require("gulp-autoprefixer"),
-  media_queries = require("gulp-group-css-media-queries"),
-  clean_css = require("gulp-clean-css"),
+  mediaqueries = require("gulp-group-css-media-queries"),
+  cleancss = require("gulp-clean-css"),
   // browserify = require("browserify"),
   // source = require("vinyl-source-stream"),
   // streamify = require("gulp-streamify"),
@@ -66,7 +66,7 @@ function browserSync() {
 
 function html() {
   return src(path.src.html)
-    .pipe(file_include())
+    .pipe(fileinclude())
     .pipe(dest(path.build.html))
     .pipe(browsersync.stream());
 }
@@ -77,10 +77,10 @@ function css() {
     .pipe(sass().on("error", sass.logError))
     .pipe(sass({ outputStyle: "expanded" }))
     .pipe(sourcemaps.write())
-    .pipe(media_queries())
+    .pipe(mediaqueries())
     .pipe(autoprefixer())
     .pipe(dest(path.build.css))
-    .pipe(clean_css())
+    .pipe(cleancss())
     .pipe(sourcemaps.write())
     .pipe(rename({ extname: ".min.css" }))
     .pipe(dest(path.build.css))
