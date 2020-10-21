@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+  let html = document.documentElement;
   let body = document.body;
   let tabListArr = document.querySelectorAll(".tab-list");
   // Сallback-popup
@@ -59,18 +60,18 @@ document.addEventListener("DOMContentLoaded", function() {
   function popupCallbackHandler(e) {
     if (e.target.classList.contains("js-callback-btn-open")) {
       callbackPopup.classList.add("is-active");
-      body.classList.add("overflow");
+      html.classList.add("overflow");
     }
     if (e.target.classList.contains("js-callback-btn-close")) {
       callbackPopup.classList.remove("is-active");
-      body.classList.remove("overflow");
+      html.classList.remove("overflow");
     }
   }
 
   // Popup project handler
   function popupProjectHandler(e) {
     if (e.target.classList.contains("js-popup-project-btn-open")) {
-      body.classList.add("overflow");
+      html.classList.add("overflow");
       popupProjectBtnOpenArr.forEach((item, i) => {
         if (e.target == item) {
           popupProjectArr[i].classList.add("is-active");
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
       })
     }
     if (e.target.classList.contains("js-popup-project-btn-close")) {
-      body.classList.remove("overflow");
+      html.classList.remove("overflow");
       popupProjectBtnCloseArr.forEach((item, i) => {
         if (e.target == item) {
           popupProjectArr[i].classList.remove("is-active");
@@ -106,10 +107,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Slick slider
   $('.project-1 .slider').slick({
-    arrow: true
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          arrows: false,
+          autoplay: true
+        }
+      }
+    ]
   });
   // Slick slider
   $('.project-2 .slider').slick({
-    arrow: true
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          arrows: false,
+          autoplay: true
+        }
+      }
+    ]
   });
 });

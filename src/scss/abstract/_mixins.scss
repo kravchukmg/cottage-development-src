@@ -1,17 +1,35 @@
 @mixin font($font_size, $line_height, $font_family: sans-serif) {
-  font: #{$font_size/$base_font_size}rem/#{$line_height/$base_font_size}rem $font_family;
+  font: #{$font_size/$base_font_size}rem/#{$line_height/$base_font_size}rem
+    $font_family;
 }
 
-@mixin adaptive-font($pc_font, $pc_line, $mob_font, $mob_line, $font_family: sans-serif) {
+@mixin adaptive-font(
+  $pc_font,
+  $pc_line,
+  $mob_font,
+  $mob_line,
+  $font_family: sans-serif
+) {
   $delta_size: $pc_font - $mob_font;
   $delta_height: $pc_line - $mob_line;
   $width: $site_width - 320;
-  font-size: calc(#{$mob_font + px} + #{$delta_size} * ((100vw - 320px) / #{$width}));
-  line-height: calc(#{$mob_line + px} + #{$delta_height} * ((100vw - 320px) / #{$width}));
+  font-size: calc(
+    #{$mob_font + px} + #{$delta_size} * ((100vw - 320px) / #{$width})
+  );
+  line-height: calc(
+    #{$mob_line + px} + #{$delta_height} * ((100vw - 320px) / #{$width})
+  );
   font-family: $font_family;
 }
 
-@mixin background($url, $top: top, $left: left, $size: cover, $color: transparent, $repeat: no-repeat) {
+@mixin background(
+  $url,
+  $top: top,
+  $left: left,
+  $size: cover,
+  $color: transparent,
+  $repeat: no-repeat
+) {
   background-image: $url;
   background-position: $top $left;
   background-size: $size;
@@ -65,6 +83,12 @@
   // 768 +
   @else if $media == tablet_plus {
     @media only screen and (min-width: $tablet-portrait) {
+      @content;
+    }
+  }
+  // 992 -
+  @else if $media == tablet_extra {
+    @media only screen and (max-width: $tablet-extra - 1) {
       @content;
     }
   }
