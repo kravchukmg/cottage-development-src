@@ -1,11 +1,11 @@
+// Icons font
+@import "icons";
+
 // Abstract
 @import "abstract/variables";
 @import "abstract/mixins";
 @import "abstract/placeholders";
 @import "abstract/animation";
-
-// Vendors
-// @import "vendors/slick/slick", "vendors/slick/slick-theme";
 
 // Base
 @import "base/fonts";
@@ -32,8 +32,3 @@
 @import "components/section-6";
 @import "components/popup-callback";
 @import "components/popup-project";
-
-// Pages
-@import "pages/home";
-
-// Vendors

@@ -33,6 +33,21 @@
     &:last-child {
       margin-right: 0;
     }
+    .icon {
+      font-size: 30px;
+    }
+    .icon-car {
+      @include icon(sport-car);
+      font-size: 40px;
+      overflow: hidden;
+      &::before {
+        display: block;
+        margin-bottom: -3px;
+      }
+    }
+    .icon-walk {
+      @include icon(walk);
+    }
     p {
       margin-bottom: 0;
       &:first-child {
