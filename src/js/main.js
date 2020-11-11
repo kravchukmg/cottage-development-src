@@ -1,4 +1,49 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Lazyload init
+  lazyload();
+  // AOS init
+  AOS.init({
+    duration: 700,
+    anchorPlacement: "center-bottom",
+  });
+  // Parallax init
+  let image = document.querySelectorAll(".parallax");
+  new simpleParallax(image, {
+    scale: 1.2,
+    orientation: "right",
+  });
+  // Inputmask init
+  Inputmask().mask(document.querySelectorAll(".input[name='phone']"));
+
+  // Slick slider
+  $('.project-1 .slider').slick({
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          arrows: false,
+          autoplay: true
+        }
+      }
+    ]
+  });
+  // Slick slider
+  $('.project-2 .slider').slick({
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          arrows: false,
+          autoplay: true
+        }
+      }
+    ]
+  });
+
+
+
   let html = document.documentElement;
   let body = document.body;
   let tabListArr = document.querySelectorAll(".tab-list");
@@ -10,6 +55,41 @@ document.addEventListener("DOMContentLoaded", function() {
   let popupProjectBtnOpenArr  = document.querySelectorAll(".js-popup-project-btn-open");
   let popupProjectBtnCloseArr = document.querySelectorAll(".js-popup-project-btn-close");
   let popupProjectArr         = document.querySelectorAll(".popup-project");
+
+  // Form
+  let forms = document.querySelectorAll('.form')
+  forms.forEach(form => form.addEventListener('submit', formSend))
+
+  // Form handler
+  async function formSend(e) {
+    e.preventDefault()
+
+    this.classList.add('is-sending')
+    let submitBtn = this.querySelector('button[type=submit]')
+    submitBtn.disabled = true
+    let formData = new FormData(this)
+
+    let response = await fetch('form.php', {
+      method: 'POST',
+      body: formData
+    })
+
+    this.classList.remove('is-sending')
+
+    if (response.ok) {
+      let result = await response.json()
+      this.reset()
+      if (callbackPopup.classList.contains('is-active')) {
+        html.classList.remove('overflow')
+        callbackPopup.classList.remove('is-active')
+      }
+      submitBtn.disabled = false
+      // alert(result.message)
+    } else {
+      submitBtn.disabled = false
+      alert('Error')
+    }
+  }
 
   // Tabs
   tabListArr.forEach((element) => {
@@ -55,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-  
+
   // Popup callback handler
   function popupCallbackHandler(e) {
     if (e.target.classList.contains("js-callback-btn-open")) {
@@ -87,48 +167,4 @@ document.addEventListener("DOMContentLoaded", function() {
       })
     }
   }
-
-
-  // Lazyload init
-  lazyload();
-  // AOS init
-  AOS.init({
-    duration: 700,
-    anchorPlacement: "center-bottom",
-  });
-  // Parallax init
-  let image = document.querySelectorAll(".parallax");
-  new simpleParallax(image, {
-    scale: 1.2,
-    orientation: "right",
-  });
-  // Inputmask init
-  Inputmask().mask(document.querySelectorAll(".input[name='phone']"));
-
-  // Slick slider
-  $('.project-1 .slider').slick({
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          arrows: false,
-          autoplay: true
-        }
-      }
-    ]
-  });
-  // Slick slider
-  $('.project-2 .slider').slick({
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          arrows: false,
-          autoplay: true
-        }
-      }
-    ]
-  });
 });
