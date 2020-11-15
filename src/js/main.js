@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let callbackBtnOpenArr  = document.querySelectorAll(".js-callback-btn-open");
   let callbackBtnCloseArr = document.querySelectorAll(".js-callback-btn-close");
   let callbackPopup       = document.querySelector(".callback-popup");
+  let popupThanks         = document.querySelector(".popup-thanks");
   // Project-popup
   let popupProjectBtnOpenArr  = document.querySelectorAll(".js-popup-project-btn-open");
   let popupProjectBtnCloseArr = document.querySelectorAll(".js-popup-project-btn-close");
@@ -77,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function() {
     this.classList.remove('is-sending')
 
     if (response.ok) {
+      popupThanks.classList.add('is-active')
+      setTimeout(() => popupThanks.classList.remove('is-active'), 2000)
+
       let result = await response.json()
       this.reset()
       if (callbackPopup.classList.contains('is-active')) {
@@ -84,10 +88,9 @@ document.addEventListener("DOMContentLoaded", function() {
         callbackPopup.classList.remove('is-active')
       }
       submitBtn.disabled = false
-      // alert(result.message)
     } else {
       submitBtn.disabled = false
-      alert('Error')
+      alert('К сожалению, что-то пошло не так, повторите попытку.')
     }
   }
 

@@ -4,6 +4,7 @@ $color-icon-msg: #485763;
   position: fixed;
   right: 30px;
   bottom: 30px;
+  z-index: 1;
 }
 .contacts__input {
   &:checked {
