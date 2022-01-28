@@ -1,7 +1,7 @@
 <?php 
   header("Content-type: text/html; charset=utf-8");
 
-  $to1 = "kravchukmaxym@gmail.com";
+  $to1 = "email@mail.com"; // email address
   $subject = "Обращение с сайта ". date("Y-m-d H:i:s");
 
   $message = "";
